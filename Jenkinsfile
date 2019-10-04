@@ -23,25 +23,25 @@ pipeline {
         }
       }
     }
-  }
-  stage ('bota lume outra vez'){
-    parallel {
-      stage('Build') {
-        steps {
-          sh 'ech 1'
+    stage ('bota lume outra vez'){
+      parallel {
+        stage('Build') {
+          steps {
+            sh 'ech 1'
+          }
         }
-      }
-      stage('Test') {
-        environment {
-          CI = 'true'
+        stage('Test') {
+          environment {
+            CI = 'true'
+          }
+          steps {
+            sh 'echo 2'
+          }
         }
-        steps {
-          sh 'echo 2'
-        }
-      }
-      stage('Deliver') {
-        steps {
-          sh 'echo 3'
+        stage('Deliver') {
+          steps {
+            sh 'echo 3'
+          }
         }
       }
     }
