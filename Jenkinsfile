@@ -1,6 +1,7 @@
 pipeline {
+  agent none
   stages {
-    stage {
+    stage ('bota lume'){
       parallel {
         stage('Build') {
           steps {
@@ -23,7 +24,7 @@ pipeline {
       }
     }
   }
-  stage {
+  stage ('bota lume outra vez'){
     parallel {
       stage('Build') {
         steps {
