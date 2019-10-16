@@ -13,8 +13,6 @@ pipeline {
         API_USER = credentials('API_USER')
         API_PASSWORD = credentials('API_PASSWORD')
         BUCKET_NAME = 'portal'
-        API_BASIC_AUTH_ID = credentials('API_BASIC_AUTH_ID')
-        API_BASIC_AUTH_PASS = credentials('API_BASIC_AUTH_PASS')
         STORAGE_ACCESS_KEY_ID = credentials('STORAGE_ACCESS_KEY_ID')
         STORAGE_SECRET_ACCESS_KEY = credentials('STORAGE_SECRET_ACCESS_KEY')
         STORAGE_TEST_ADDRESS = credentials('STORAGE_DEV_ADDRESS')
