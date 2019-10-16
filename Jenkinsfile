@@ -22,28 +22,26 @@ pipeline {
         ANDROID_KEY_STORE = credentials('ANDROID_KEY_STORE')
     }
     stages {
-        parallel {
-            stage('SkinService && HostLib && SkinCMD && DC Linux x86') {
-                environment {
-                    QT_INSTALL_LIBS="${$QTDIR}/lib"
-                    QT_INSTALL_QML="${$QTDIR}/qml"
-                    QT_INSTALL_PLUGINS="${$QTDIR}/plugins"
-                    API = "${API_TEST_ADDRESS}"
-                    ARCH_FOLDER = 'linux'
-                    ARCHITECTURE = 'linux-ubuntu-x86'
-                    STORAGE_ADDRESS = "${STORAGE_TEST_ADDRESS}"
-                    PRETTY_NAME = 'DisplaxConnect'
-                    FILE_NAME = 'INSTALLER.installer'
-                    PROJECT = 'displax-connect'
-                }
-                agent {
-                    label 'ubuntu-i386-qt'
-                }
-                steps {
-                    script{
-                        withEnv(['PRETTY_NAME=DisplaxSoftware', 'PROJECT=SkinServiceAppsInstaller', 'DISTRIBUTION=linux']) {
-                            sh './deploy.sh';
-                        }
+        stage('SkinService && HostLib && SkinCMD && DC Linux x86') {
+            environment {
+                QT_INSTALL_LIBS="${$QTDIR}/lib"
+                QT_INSTALL_QML="${$QTDIR}/qml"
+                QT_INSTALL_PLUGINS="${$QTDIR}/plugins"
+                API = "${API_TEST_ADDRESS}"
+                ARCH_FOLDER = 'linux'
+                ARCHITECTURE = 'linux-ubuntu-x86'
+                STORAGE_ADDRESS = "${STORAGE_TEST_ADDRESS}"
+                PRETTY_NAME = 'DisplaxConnect'
+                FILE_NAME = 'INSTALLER.installer'
+                PROJECT = 'displax-connect'
+            }
+            agent {
+                label 'ubuntu-i386-qt'
+            }
+            steps {
+                script{
+                    withEnv(['PRETTY_NAME=DisplaxSoftware', 'PROJECT=SkinServiceAppsInstaller', 'DISTRIBUTION=linux']) {
+                        sh './deploy.sh';
                     }
                 }
             }
