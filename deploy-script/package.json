@@ -1,0 +1,16 @@
+{
+  "name": "deploy-script",
+  "version": "1.0.0",
+  "description": "deploy script to software",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "R&D@displax.com",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "0.17.1",
+    "env-var": "3.0.2",
+    "minio": "3.2.2"
+  }
+}
