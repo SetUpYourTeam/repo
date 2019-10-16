@@ -1,3 +1,5 @@
+chmod a+x ./deploy.sh
+
 export FILE_PATH="$(pwd)/$PROJECT/installer/$ARCH_FOLDER"
 export SOFTWARE_VERSION="$(sed -n -e '/VERSION =/ s/.*\  *//p' displax-connect/QtInstallerFramework/Installer.pro)"
 
