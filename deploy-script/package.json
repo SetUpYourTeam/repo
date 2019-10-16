@@ -9,7 +9,7 @@
   "author": "R&D@displax.com",
   "license": "ISC",
   "dependencies": {
-    "axios": "0.17.1",
+    "axios": "0.18.1",
     "env-var": "3.0.2",
     "minio": "3.2.2"
   }
